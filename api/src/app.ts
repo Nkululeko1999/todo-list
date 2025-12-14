@@ -1,6 +1,6 @@
 import express, { type Application } from "express";
 import "dotenv/config";
-import IndexRouter from "./router/index.router.js";
+import IndexRouter from "./routes/index.router.js";
 
 class App {
   private app: Application;
