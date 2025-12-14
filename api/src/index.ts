@@ -1,10 +1,14 @@
 import dotenv from "dotenv";
 import App from "./app.js";
+import database from "./config/db.config.js";
 
 dotenv.config();
 
-const startServer = (): void => {
+const startServer = async (): Promise<void> => {
     try {
+        // Connect to database
+        await database.connect();
+
         const app = new App();
         app.startApp();
     } catch (error) {
