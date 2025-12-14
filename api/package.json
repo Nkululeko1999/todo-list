@@ -4,10 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "node build/index.js",
+    "dev": "concurrently \"tsc -w\" \"nodemon build/index.js\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "module",
+  "dependencies": {
+    "@types/concurrently": "^6.4.0",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^5.0.6",
+    "concurrently": "^9.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
 }
